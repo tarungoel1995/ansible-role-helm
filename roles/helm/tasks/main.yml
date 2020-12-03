@@ -1,0 +1,18 @@
+---
+# tasks file for helm
+
+- name: Git clone stable repo on HEAD
+  ansible.builtin.git:
+    repo: "{{ repo_url }}"
+    dest: "{{ dest_dir }}"
+    update: "{{ update_repo }}"
+
+
+- name: Deploy pwa-weather-app chart using values files on target
+  community.kubernetes.helm:
+    name: "{{ chart_name }}"
+    chart_ref: "{{ dest_dir }}{{ chart_ref }}"
+    release_namespace: "{{ release_namespace }}"
+    state: "{{ state }}"
+    values_files:
+      - "{{ value_file_name }}"

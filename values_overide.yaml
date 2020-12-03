@@ -1,0 +1,5 @@
+#HPA
+maxReplicas: 10
+minReplicas: 2
+
+replicaCount: 2

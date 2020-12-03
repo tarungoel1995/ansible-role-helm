@@ -1,0 +1,12 @@
+---
+# vars file for helm
+repo_url: https://github.com/tarungoel1995/helm-charts.git
+dest_dir: /tmp/helm_repo/
+update_repo: yes
+
+chart_name: weather-app
+chart_ref: pwa-weather-app
+release_namespace: weather
+state: present
+value_file_name: values_overide.yaml
+
